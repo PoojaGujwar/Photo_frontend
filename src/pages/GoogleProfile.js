@@ -19,7 +19,7 @@ export default function GoogleProfile() {
     (async () => {
         if(location.pathname.includes('v2')) {
         try {
-          const {data} = await authServerAxios.get('/user/profile/google');
+          const {data} = await axios.get('https://photo-backend-delta.vercel.app/user/profile/google',{withCredentials: true});
           setUser(data)
           console.log(data)
         } catch (error) {
