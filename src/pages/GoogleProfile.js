@@ -4,7 +4,7 @@ import axios from "axios";
 import { useState, useEffect} from "react";
 import { useNavigate ,useLocation} from "react-router-dom";
 // import { authServerAxios, googleApiAxios } from "../lib/axios.lib";
-import {authServerAxios} from "../lib/axios.lib"
+import {authServerAxios,googleApiAxios} from "../lib/axios.lib"
 import UserContext from "../context/UserContext";
 import Cookies from "js-cookie"
 
@@ -16,12 +16,12 @@ export default function GoogleProfile() {
   const {user,setUser} = useContext(UserContext)
   const token = Cookies.get("access_token")
   console.log(token)
-
+console.log(googleApiAxios)
   
   useEffect(() => {
     (async () => {
        if (token) {
-        const response = await githubApiAxios.get('/user', {
+        const response = await googleApiAxios.get('/user', {
           headers: {
             Authorization: `Bearer ${token}`,
           },
