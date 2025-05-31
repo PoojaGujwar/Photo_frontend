@@ -6,6 +6,7 @@ import { useNavigate ,useLocation} from "react-router-dom";
 // import { authServerAxios, googleApiAxios } from "../lib/axios.lib";
 import {authServerAxios} from "../lib/axios.lib"
 import UserContext from "../context/UserContext";
+import Cookies from "js-cookie"
 
 export default function GoogleProfile() {
   
@@ -13,11 +14,20 @@ export default function GoogleProfile() {
   console.log(location ,"LOCATION")
   const navigate = useNavigate()
   const {user,setUser} = useContext(UserContext)
+  const token = Cookies.get("access_token")
+  console.log(token)
 
   
   useEffect(() => {
     (async () => {
-        if(location.pathname.includes('v2')) {
+       if (token) {
+        const response = await githubApiAxios.get('/user', {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        })
+        console.log(response)
+       }else if(location.pathname.includes('v2')) {
         try {
           const {data} = await axios.get('https://photo-backend-delta.vercel.app/user/profile/google',{withCredentials: true});
           setUser(data)
