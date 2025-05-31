@@ -14,7 +14,7 @@ export default function GoogleProfile() {
   console.log(location ,"LOCATION")
   const navigate = useNavigate()
   const {user,setUser} = useContext(UserContext)
-  const token = Cookies.get("access_token")
+  const token = Cookies.get("access_token")||''
   console.log(token)
 console.log(googleApiAxios)
   
