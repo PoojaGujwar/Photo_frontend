@@ -21,7 +21,7 @@ export default function GoogleProfile() {
         try {
           const {data} = await authServerAxios.get('/user/profile/google',{withCredentials:true});
           setUser(data)
-          navigate("/albums")
+          console.log(data)
         } catch (error) {
           if (error.status === 403 || error.status === 500) {
            // navigate("/")
