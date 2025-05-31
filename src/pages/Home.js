@@ -2,7 +2,7 @@ export default function Home(){
      const authenticateViaOAuth = async(method)=>{
     try {
       console.log(method)
-      window.location.href= `http://localhost:4000/auth/${method}`
+      window.location.href= `${process.env.REACT_APP_SERVER_BASE_URL}/auth/${method}`
     } catch (error) {
       console.log(error,"here")
     }
