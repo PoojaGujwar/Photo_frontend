@@ -19,7 +19,7 @@ export default function GoogleProfile() {
     (async () => {
         if(location.pathname.includes('v2')) {
         try {
-          const {data} = await authServerAxios.get('/user/profile/google',{withCredentials:true});
+          const {data} = await authServerAxios.get('/user/profile/google');
           setUser(data)
           console.log(data)
         } catch (error) {
@@ -31,7 +31,7 @@ export default function GoogleProfile() {
        // navigate("/")
       }
     })();
-  }, []);
+  }, [location.pathname]);
 
   return (
     <header
