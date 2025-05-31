@@ -33,6 +33,9 @@ path:"/v2/profile/google",element:<GoogleProfile/>
 
 function App() {
   const [user,setUser] = useState(null)
+  if(user){
+    <Albums/>
+  }
   return (
     <>
     <UserContext.Provider value={{user,setUser}}>
