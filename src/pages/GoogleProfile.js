@@ -9,7 +9,7 @@ import UserContext from "../context/UserContext";
 import Cookies from "js-cookie"
 
 export default function GoogleProfile() {
-  
+  const [userinfo,setUserInfo] = useState()
   const location = useLocation()
   console.log(location ,"LOCATION")
   const navigate = useNavigate()
@@ -32,13 +32,14 @@ console.log(googleApiAxios)
           const {data} = await axios.get('https://photo-backend-delta.vercel.app/user/profile/google',{withCredentials: true});
           setUser(data)
           console.log(data)
+          navigate(`/albums?user=${userinfo}`)
         } catch (error) {
           if (error.status === 403 || error.status === 500) {
-           // navigate("/")
+            navigate("/")
           }
         }
       } else {
-       // navigate("/")
+       navigate("/")
       }
     })();
   }, [location.pathname]);
