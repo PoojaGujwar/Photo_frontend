@@ -14,7 +14,7 @@ import ShareAlbum from "./components/ShareAlbum";
 import LayoutWithHeader from "./components/LayoutWithHeader";
 
 
-function App() {
+export default function App() {
   const [userData,setUserInfo ] = useState(null)
   console.log(userData)
     return (
