@@ -146,7 +146,6 @@ export default function Albums({ users }) {
   const filterAlbums = albums?.filter((val) => val.ownerId === users.id);
   return (
     <>
-    
       <div className="bg-light">
         <div className="container-fluid py-3 px-3">
           <h2 className="text-center">Albums</h2>
