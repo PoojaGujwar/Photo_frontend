@@ -4,10 +4,6 @@
 /node_modules
 /.pnp
 .pnp.js
-<<<<<<< HEAD
-=======
-
->>>>>>> 563016f0013d7b37c56339e3ab1508023d394a6d
 .env
 # testing
 /coverage
