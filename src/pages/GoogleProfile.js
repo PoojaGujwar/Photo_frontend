@@ -3,7 +3,6 @@ import React, { useContext } from "react";
 import axios from "axios";
 import { useState, useEffect} from "react";
 import { useNavigate ,useLocation} from "react-router-dom";
-// import { authServerAxios, googleApiAxios } from "../lib/axios.lib";
 import {authServerAxios,googleApiAxios} from "../lib/axios.lib"
 import UserContext from "../context/UserContext";
 import Cookies from "js-cookie"
