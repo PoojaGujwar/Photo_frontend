@@ -33,7 +33,7 @@ export default function GoogleProfile({userData}) {
       } else if (location.pathname.includes('v2')) {
         console.log(location.pathname)
         try {
-          const response = await axios.get('https://photo-frontend-amber.vercel.app/user/profile/google',{withCredentials:true});
+          const response = await axios.get('https://photo-backend-delta.vercel.app/user/profile/google',{withCredentials:true});
           console.log(response)
           userData(response.data);
           console.log(response)
